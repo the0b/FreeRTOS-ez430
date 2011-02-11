@@ -1,0 +1,5 @@
+This is a port of the FreeRTOSV6.1.1 Demo to the ez430-RF2500 Wireless
+development tool using Code Composer Studio v4. Running the demo on the ez430 
+requires no additional hardware, so you should be able to just compile and debug.
+
+More information coming soon.
