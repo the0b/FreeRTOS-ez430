@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 3.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="RTOSDemoMSP430F2274.com.ti.ccstudio.buildDefinitions.MSP430.ProjectType.976940474" name="MSP430" projectType="com.ti.ccstudio.buildDefinitions.MSP430.ProjectType">
+<configuration artifactExtension="out" artifactName="RTOSDemoMSP430F2274" description="" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764" name="Debug" parent="com.ti.ccstudio.buildDefinitions.MSP430.Debug">
+<toolChain id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.DebugToolchain.1788360499" name="TI Code Generation Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.DebugToolchain" targetTool="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerDebug.1171864202">
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.1513768867" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=MSP430F2274"/>
+<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+<listOptionValue builtIn="false" value="OUTPUT_FORMAT=COFF"/>
+<listOptionValue builtIn="false" value="CCS_MBS_VERSION=4.2.0"/>
+<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=lnk_msp430f2274.cmd"/>
+<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=rts430.lib"/>
+<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.1139026000" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="3.3.1" valueType="string"/>
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug">
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DIAG_WARNING.141007485" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DIAG_WARNING" valueType="stringList">
+<listOptionValue builtIn="false" value="225"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.174936801" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.2020487434" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.msp" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE.993390006" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="__MSP430F2274__"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.537219185" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CCS_INSTALL_ROOT}/msp430/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/Demo_Source}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/FreeRTOS_Source}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/FreeRTOS_Source/portable/CCS4/MSP430}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/FreeRTOS_Source/portable/MemMang}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/include}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/RTOSDemoMSP430F2274/FreeRTOS_Source/include}&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL.1897703288" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_LEVEL._none" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED.669355993" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.OPT_FOR_SPEED._none" valueType="enumerated"/>
+</tool>
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerDebug.1171864202" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerDebug">
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.911304347" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="500" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.STACK_SIZE.1930766279" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.STACK_SIZE" value="80" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.OUTPUT_FILE.1453577430" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.OUTPUT_FILE" value="&quot;RTOSDemoMSP430F2274.out&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.MAP_FILE.963091606" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.MAP_FILE" value="&quot;RTOSDemoMSP430F2274.map&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.LIBRARY.466863887" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.LIBRARY" valueType="libs">
+<listOptionValue builtIn="false" value="&quot;rts430.lib&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.SEARCH_PATH.194680010" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.SEARCH_PATH" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;${CCS_INSTALL_ROOT}/msp430/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.generatedLinkerCommandFiles.1273092323" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.generatedLinkerCommandFiles" valueType="libs">
+<listOptionValue builtIn="false" value="&quot;$(GEN_CMDS_QUOTED)&quot;"/>
+</option>
+</tool>
+<macros expandEnvironmentMacros="true"/>
+</toolChain>
+<resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/FreeRTOS_Source/portable/CCS4/MSP430/portext.s43" name="portext.s43" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/FreeRTOS_Source/portable/CCS4/MSP430/portext.asm" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/FreeRTOS_Source/portable/CCS4/MSP430/portext.s43">
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/FreeRTOS_Source/portable/CCS4/MSP430/portext.s43" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/Demo_Source/serial.c" name="serial.c" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/Demo_Source/serial.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serial.c">
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serial.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" name="comtest.c" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c">
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
+</resourceConfiguration>
+<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43" name="serialASM.s43" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/Demo_Source/serialASM.asm" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43">
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
+</resourceConfiguration>
+</configuration>
+<configuration artifactExtension="out" artifactName="RTOSDemoMSP430F2274" description="" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.273749880" name="Release" parent="com.ti.ccstudio.buildDefinitions.MSP430.Release">
+<toolChain id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.ReleaseToolchain.1095213671" name="TI Code Generation Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.1128210889">
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS.2046149382" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_TAGS" valueType="stringList">
+<listOptionValue builtIn="false" value="DEVICE_CONFIGURATION_ID=MSP430F2274"/>
+<listOptionValue builtIn="false" value="DEVICE_ENDIANNESS=little"/>
+<listOptionValue builtIn="false" value="OUTPUT_FORMAT=COFF"/>
+<listOptionValue builtIn="false" value="CCS_MBS_VERSION=4.2.0"/>
+<listOptionValue builtIn="false" value="LINKER_COMMAND_FILE=lnk_msp430f2274.cmd"/>
+<listOptionValue builtIn="false" value="RUNTIME_SUPPORT_LIBRARY=rts430.lib"/>
+<listOptionValue builtIn="false" value="OUTPUT_TYPE=executable"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION.12054588" superClass="com.ti.ccstudio.buildDefinitions.core.OPT_CODEGEN_VERSION" value="3.3.1" valueType="string"/>
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease.1926894820" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerRelease">
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DIAG_WARNING.569631190" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DIAG_WARNING" valueType="stringList">
+<listOptionValue builtIn="false" value="225"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.1607645155" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.PRINTF_SUPPORT.minimal" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.1138761757" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION" value="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.SILICON_VERSION.msp" valueType="enumerated"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE.1867133644" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.DEFINE" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="__MSP430F2274__"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH.574905247" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.compilerID.INCLUDE_PATH" valueType="includePath">
+<listOptionValue builtIn="false" value="&quot;${CCS_INSTALL_ROOT}/msp430/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+</option>
+</tool>
+<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.1128210889" name="MSP430 Linker" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease">
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE.1709323701" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.HEAP_SIZE" value="80" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.STACK_SIZE.1130464053" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.STACK_SIZE" value="80" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.OUTPUT_FILE.315677803" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.OUTPUT_FILE" value="&quot;RTOSDemoMSP430F2274.out&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.MAP_FILE.1531668989" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.MAP_FILE" value="&quot;RTOSDemoMSP430F2274.map&quot;" valueType="string"/>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.LIBRARY.1715143178" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.LIBRARY" valueType="libs">
+<listOptionValue builtIn="false" value="&quot;rts430.lib&quot;"/>
+</option>
+<option id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.SEARCH_PATH.273931897" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.linkerID.SEARCH_PATH" valueType="stringList">
+<listOptionValue builtIn="false" value="&quot;${CCS_INSTALL_ROOT}/msp430/include&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/lib&quot;"/>
+<listOptionValue builtIn="false" value="&quot;${CG_TOOL_ROOT}/include&quot;"/>
+</option>
+</tool>
+</toolChain>
+</configuration>
+<macros/>
+</project>
+</ManagedProjectBuildInfo>
