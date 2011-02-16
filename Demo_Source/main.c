@@ -89,17 +89,18 @@
 #include "partest.h"
 #include "flash.h"
 #include "integer.h"
-//#include "comtest2.h"
+#include "comtest2.h"
 #include "PollQ.h"
 
 /* Constants required for hardware setup. */
-#define mainALL_BITS_OUTPUT		( ( unsigned portCHAR ) 0xff )
-#define mainMAX_FREQUENCY		( ( unsigned portCHAR ) 121 )
+//#define mainALL_BITS_OUTPUT		( ( unsigned portCHAR ) 0xff )
+//#define mainMAX_FREQUENCY		( ( unsigned portCHAR ) 121 )
 
-/* Constants that define the LED's used by the various tasks. [in this case
-the '*' characters on the LCD represent LED's] */
-#define mainCHECK_LED			( 4 )
-#define mainCOM_TEST_LED		( 10 )
+/* Constants that define the LED's used by the various tasks. 
+ * The eZ430 has only two LEDs, so make sure that each LED is 
+ * used for only one task or you will get unexpected results. */
+#define mainCHECK_LED			( 1 )
+#define mainCOM_TEST_LED		( 0 )
 
 /* Demo task priorities. */
 #define mainCHECK_TASK_PRIORITY			( tskIDLE_PRIORITY + 3 )
@@ -160,24 +161,13 @@ int main( void )
 	vParTestInitialise();
 	
 	//vPortSetupTimerInterrupt();
-	//Code for testing correct LED setup
-	//Toggle LEDs repeatedly
-	
-	//vParTestToggleLED(0);
-/*	for(;;)
-	{
-		//Simple delay loop, no using RTOS features yet
-		for(ul = 0; ul < 0xfffff; ul++){}
-		
-		//Toggle the first four LEDs
-		//vParTestToggleLED( 0 );
-		vParTestToggleLED( 1 );
-	}
-*/
+
 	// Start the standard demo application tasks.
-	vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
+	// Note that all of these tasks use the same LEDs, if you want correct feedback 
+	//   from the LEDs, make sure that only one test in enabled
+	//vStartLEDFlashTasks( mainLED_TASK_PRIORITY );
 	//vStartIntegerMathTasks( tskIDLE_PRIORITY );
-	//vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED - 1 );
+	vAltStartComTestTasks( mainCOM_TEST_PRIORITY, mainCOM_TEST_BAUD_RATE, mainCOM_TEST_LED );
 	//vStartPolledQueueTasks( mainQUEUE_POLL_PRIORITY );
 
 	// Start the 'Check' task which is defined in this file. 

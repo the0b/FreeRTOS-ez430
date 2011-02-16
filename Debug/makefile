@@ -11,7 +11,9 @@ ORDERED_OBJS += \
 $(GEN_CMDS_QUOTED) \
 "./Demo_Source/Common_Demo_Files/integer.obj" \
 "./Demo_Source/Common_Demo_Files/flash.obj" \
+"./Demo_Source/Common_Demo_Files/comtest.obj" \
 "./Demo_Source/Common_Demo_Files/PollQ.obj" \
+"./Demo_Source/serial.obj" \
 "./Demo_Source/main.obj" \
 "./Demo_Source/ParTest.obj" \
 "./FreeRTOS_Source/portable/CCS4/MSP430/portext.obj" \
@@ -132,8 +134,8 @@ RTOSDemoMSP430F2274.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(MSP430_EXECUTABLE_OUTPUTS__QTD) "RTOSDemoMSP430F2274.out"
-	-$(RM) ".\FreeRTOS_Source\croutine.obj" ".\FreeRTOS_Source\list.obj" ".\FreeRTOS_Source\queue.obj" ".\FreeRTOS_Source\tasks.obj" ".\FreeRTOS_Source\portable\MemMang\heap_1.obj" ".\FreeRTOS_Source\portable\CCS4\MSP430\port.obj" ".\FreeRTOS_Source\portable\CCS4\MSP430\portext.obj" ".\Demo_Source\ParTest.obj" ".\Demo_Source\main.obj" ".\Demo_Source\Common_Demo_Files\PollQ.obj" ".\Demo_Source\Common_Demo_Files\flash.obj" ".\Demo_Source\Common_Demo_Files\integer.obj" 
-	-$(RM) ".\FreeRTOS_Source\croutine.pp" ".\FreeRTOS_Source\list.pp" ".\FreeRTOS_Source\queue.pp" ".\FreeRTOS_Source\tasks.pp" ".\FreeRTOS_Source\portable\MemMang\heap_1.pp" ".\FreeRTOS_Source\portable\CCS4\MSP430\port.pp" ".\Demo_Source\ParTest.pp" ".\Demo_Source\main.pp" ".\Demo_Source\Common_Demo_Files\PollQ.pp" ".\Demo_Source\Common_Demo_Files\flash.pp" ".\Demo_Source\Common_Demo_Files\integer.pp" 
+	-$(RM) ".\FreeRTOS_Source\croutine.obj" ".\FreeRTOS_Source\list.obj" ".\FreeRTOS_Source\queue.obj" ".\FreeRTOS_Source\tasks.obj" ".\FreeRTOS_Source\portable\MemMang\heap_1.obj" ".\FreeRTOS_Source\portable\CCS4\MSP430\port.obj" ".\FreeRTOS_Source\portable\CCS4\MSP430\portext.obj" ".\Demo_Source\ParTest.obj" ".\Demo_Source\main.obj" ".\Demo_Source\serial.obj" ".\Demo_Source\Common_Demo_Files\PollQ.obj" ".\Demo_Source\Common_Demo_Files\comtest.obj" ".\Demo_Source\Common_Demo_Files\flash.obj" ".\Demo_Source\Common_Demo_Files\integer.obj" 
+	-$(RM) ".\FreeRTOS_Source\croutine.pp" ".\FreeRTOS_Source\list.pp" ".\FreeRTOS_Source\queue.pp" ".\FreeRTOS_Source\tasks.pp" ".\FreeRTOS_Source\portable\MemMang\heap_1.pp" ".\FreeRTOS_Source\portable\CCS4\MSP430\port.pp" ".\Demo_Source\ParTest.pp" ".\Demo_Source\main.pp" ".\Demo_Source\serial.pp" ".\Demo_Source\Common_Demo_Files\PollQ.pp" ".\Demo_Source\Common_Demo_Files\comtest.pp" ".\Demo_Source\Common_Demo_Files\flash.pp" ".\Demo_Source\Common_Demo_Files\integer.pp" 
 	-@echo ' '
 
 .PHONY: all clean dependents

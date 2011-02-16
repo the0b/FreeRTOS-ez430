@@ -368,7 +368,6 @@ portBASE_TYPE xPortStartScheduler( void ) PRIVILEGED_FUNCTION;
  * the hardware is left in its original condition after the scheduler stops
  * executing.
  */
-void vPortSetupTimerInterrupt( void ) PRIVILEGED_FUNCTION;
 void vPortEndScheduler( void ) PRIVILEGED_FUNCTION;
 
 /*

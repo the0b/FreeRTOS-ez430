@@ -68,14 +68,14 @@
 /* Demo application includes. */
 #include "serial.h"
 
-/* Constants required to setup the hardware. */
-#define serTX_AND_RX			( ( unsigned portCHAR ) 0x03 )
+/* Constants required to setup the hardware. P3.4 and P3.5 for MSP430F2274*/
+#define serTX_AND_RX			( ( unsigned portCHAR ) 0x18 )
 
 /* Misc. constants. */
 #define serNO_BLOCK				( ( portTickType ) 0 )
 
 /* Enable the UART Tx interrupt. */
-#define vInterruptOn() IFG2 |= UTXIFG1
+#define vInterruptOn() IFG2 |= UCA0TXIFG
 
 /* The queue used to hold received characters. */
 static xQueueHandle xRxedChars;
@@ -102,35 +102,35 @@ unsigned portLONG ulBaudRateCount;
 		xRxedChars = xQueueCreate( uxQueueLength, ( unsigned portBASE_TYPE ) sizeof( signed portCHAR ) );
 		xCharsForTx = xQueueCreate( uxQueueLength, ( unsigned portBASE_TYPE ) sizeof( signed portCHAR ) );
 
-		/* Reset UART. */
+		/* Set UART reset . */
 		UCA0CTL1 |= UCSWRST;
 
 		/* Set pin function. */
-		P4SEL |= serTX_AND_RX;
+		P3SEL |= serTX_AND_RX;
 
 		/* All other bits remain at zero for n, 8, 1 interrupt driven operation.
 		LOOPBACK MODE!*/
-		UCA0STAT |= CHAR + UCLISTEN;
+		UCA0STAT |= UC7BIT + UCLISTEN;
 		UCA0CTL1 |= UCSSEL1;
 
 		/* Setup baud rate low byte. */
-		U1BR0 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
+		UCA0BR0 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
 
 		/* Setup baud rate high byte. */
 		ulBaudRateCount >>= 8UL;
-		U1BR1 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
+		UCA0BR1 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
 
 		/* Enable ports. */
-		ME2 |= UTXE1 + URXE1;
+		//ME2 |= UTXE1 + URXE1;
 
-		/* Set. */
-		UCTL1 &= ~SWRST;
+		/* Clear UART reset. */
+		UCA0CTL1 &= ~UCSWRST;
 
 		/* Nothing in the buffer yet. */
 		sTHREEmpty = pdTRUE;
 
 		/* Enable interrupts. */
-		IE2 |= URXIE1 + UTXIE1;
+		IE2 |= UCA0RXIE + UCA0TXIE;
 	}
 	portEXIT_CRITICAL();
 	
@@ -170,7 +170,7 @@ signed portBASE_TYPE xReturn;
 			there are no characters queued to be transmitted - so we can
 			write the character directly to the shift Tx register. */
 			sTHREEmpty = pdFALSE;
-			U1TXBUF = cOutChar;
+			UCA0TXBUF = cOutChar;
 			xReturn = pdPASS;
 		}
 		else
@@ -194,7 +194,7 @@ signed portBASE_TYPE xReturn;
 				/* Get back the character we just posted. */
 				xQueueReceive( xCharsForTx, &cOutChar, serNO_BLOCK );
 				sTHREEmpty = pdFALSE;
-				U1TXBUF = cOutChar;
+				UCA0TXBUF = cOutChar;
 			}
 		}
 	}
@@ -209,7 +209,7 @@ signed portBASE_TYPE xReturn;
 	/*
 	 * UART RX interrupt service routine.
 	 */
-	#pragma vector=UART1RX_VECTOR
+	#pragma vector=USCIAB0RX_VECTOR
 	__interrupt void vRxISR( void )
 	{
 	signed portCHAR cChar;
@@ -217,7 +217,7 @@ signed portBASE_TYPE xReturn;
 	
 		/* Get the character from the UART and post it on the queue of Rxed
 		characters. */
-		cChar = U1RXBUF;
+		cChar = UCA0RXBUF;
 	
 		xQueueSendFromISR( xRxedChars, &cChar, &xHigherPriorityTaskWoken );
 
@@ -237,7 +237,7 @@ signed portBASE_TYPE xReturn;
 	/*
 	 * UART Tx interrupt service routine.
 	 */
-	#pragma vector=UART1TX_VECTOR
+	#pragma vector=USCIAB0TX_VECTOR
 	__interrupt void vTxISR( void )
 	{
 	signed portCHAR cChar;
@@ -249,7 +249,7 @@ signed portBASE_TYPE xReturn;
 		if( xQueueReceiveFromISR( xCharsForTx, &cChar, &xTaskWoken ) == pdTRUE )
 		{
 			/* There was another character queued - transmit it now. */
-			U1TXBUF = cChar;
+			UCA0TXBUF = cChar;
 		}
 		else
 		{
