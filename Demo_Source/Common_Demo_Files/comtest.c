@@ -109,7 +109,7 @@ don't have to block to send. */
 #define comNO_BLOCK					( ( portTickType ) 0 )
 
 /* The Rx task will block on the Rx queue for a long period. */
-#define comRX_BLOCK_TIME			( ( portTickType ) 0xffff )
+#define comRX_BLOCK_TIME			( ( portTickType ) 0x0fff )// 0xffff )
 
 /* The sequence transmitted is from comFIRST_BYTE to and including comLAST_BYTE. */
 #define comFIRST_BYTE				( 'A' )
@@ -188,6 +188,9 @@ portTickType xTimeToWait;
 			xTimeToWait = comTX_MIN_BLOCK_TIME;
 		}
 
+		// Debugging
+		//xTimeToWait = comTX_MIN_BLOCK_TIME;
+		
 		vTaskDelay( xTimeToWait );
 	}
 } /*lint !e715 !e818 pvParameters is required for a task function even if it is not referenced. */

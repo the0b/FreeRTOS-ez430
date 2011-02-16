@@ -1,5 +1,25 @@
 This is a port of the FreeRTOSV6.1.1 Demo to the ez430-RF2500 Wireless
-development tool using Code Composer Studio v4. Running the demo on the ez430 
+development tool using Code Composer Studio v4.2. Running the demo on the ez430 
 requires no additional hardware, so you should be able to just compile and debug.
+
+The eZ430-RF2500 uses the MSP430F2274 which contains 1KB of RAM and 32KB of flash
+memory. The number of concurrent tasks is very limited due to th small RAM size,
+but this demo is still very useful for learning how to use FreeRTOS.
+
+I have completed porting the LED flashing tasks (vStartLEDFlashTasks) and the 
+serial communication tasks (vAltStartComTestTasks) and both are fully operational.
+However, in my testing, it is not possible to enable the LED flashing and serial
+communication tasks at the same time. I have not investigate the cause yet, 
+but it is probably related to memory constraints. At any rate, there are only 
+two LEDs on the board, so it is better to run the tasks separately if you want
+meaningful visual feedback.
+
+To enable/disable tasks, just comment out/in the relevant lines of code in main()
+
+Currently working demo tasks:
+vStartLEDFlashTasks - flashes the two LEDs at different rates
+vAltStartComTestTasks - UART of serial pins in loopback mode, repeatedly sends
+                        the letters A-X at uneven intervals. 
+
 
 More information coming soon.

@@ -197,8 +197,6 @@ void vPortSetupTimerInterrupt( void )
 
 	/* Up mode. */
 	TACTL |= MC_1;
-	
-	//_EINT();
 }
 /*-----------------------------------------------------------*/
 
@@ -207,17 +205,8 @@ void vPortSetupTimerInterrupt( void )
 __interrupt void vTickISREntry( void )
 {
 extern void vPortTickISR( void );
-
+	//Noop used for debugging
 	_NOP();
-/*	if( ( P1OUT & BIT0 ) == 0 )
-	{
-		P1OUT |= BIT0;
-	}
-	else
-	{
-		P1OUT &= ~BIT0;
-	}
-*/	
 	#if configUSE_PREEMPTION == 1
 		extern void vPortPreemptiveTickISR( void );
 		vPortPreemptiveTickISR();

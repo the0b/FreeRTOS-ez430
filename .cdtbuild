@@ -66,9 +66,6 @@
 <resourceConfiguration exclude="false" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" name="comtest.c" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c">
 <tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/Common_Demo_Files/comtest.c" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
 </resourceConfiguration>
-<resourceConfiguration exclude="true" id="com.ti.ccstudio.buildDefinitions.MSP430.Debug.720504764./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43" name="serialASM.s43" rcbsApplicability="disable" resourcePath="/RTOSDemoMSP430F2274/Demo_Source/serialASM.asm" toolsToInvoke="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43">
-<tool id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767./RTOSDemoMSP430F2274/Demo_Source/serialASM.s43" name="MSP430 Compiler" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.compilerDebug.883104767"/>
-</resourceConfiguration>
 </configuration>
 <configuration artifactExtension="out" artifactName="RTOSDemoMSP430F2274" description="" id="com.ti.ccstudio.buildDefinitions.MSP430.Release.273749880" name="Release" parent="com.ti.ccstudio.buildDefinitions.MSP430.Release">
 <toolChain id="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.ReleaseToolchain.1095213671" name="TI Code Generation Tools" superClass="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.ReleaseToolchain" targetTool="com.ti.ccstudio.buildDefinitions.MSP430_3.3.exe.linkerRelease.1128210889">

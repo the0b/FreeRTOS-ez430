@@ -109,7 +109,7 @@
 #define mainLED_TASK_PRIORITY			( tskIDLE_PRIORITY + 1 )
 
 /* Baud rate used by the COM test tasks. */
-#define mainCOM_TEST_BAUD_RATE			( ( unsigned portLONG ) 19200 )
+#define mainCOM_TEST_BAUD_RATE			( ( unsigned portLONG ) 9600 )
 
 /* The frequency at which the 'Check' tasks executes.  See the comments at the
 top of the page.  When the system is operating error free the 'Check' task
@@ -159,8 +159,6 @@ int main( void )
 	/* Setup the hardware ready for the demo. */
 	prvSetupHardware();
 	vParTestInitialise();
-	
-	//vPortSetupTimerInterrupt();
 
 	// Start the standard demo application tasks.
 	// Note that all of these tasks use the same LEDs, if you want correct feedback 
@@ -188,6 +186,7 @@ portTickType xDelayPeriod = mainNO_ERROR_CHECK_DELAY;
 
 	/* Cycle for ever, delaying then checking all the other tasks are still
 	operating without error. */
+	(void) vErrorChecks;	//So compiler won't complain about lack of reference
 	for( ;; )
 	{
 		/* Wait until it is time to check again.  The time we wait here depends

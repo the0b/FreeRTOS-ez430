@@ -69,7 +69,7 @@
 #include "serial.h"
 
 /* Constants required to setup the hardware. P3.4 and P3.5 for MSP430F2274*/
-#define serTX_AND_RX			( ( unsigned portCHAR ) 0x18 )
+#define serTX_AND_RX			( ( unsigned portCHAR ) 0x30 )
 
 /* Misc. constants. */
 #define serNO_BLOCK				( ( portTickType ) 0 )
@@ -98,39 +98,40 @@ unsigned portLONG ulBaudRateCount;
 
 	portENTER_CRITICAL();
 	{
-		/* Create the queues used by the com test task. */
+		// Create the queues used by the com test task.
 		xRxedChars = xQueueCreate( uxQueueLength, ( unsigned portBASE_TYPE ) sizeof( signed portCHAR ) );
 		xCharsForTx = xQueueCreate( uxQueueLength, ( unsigned portBASE_TYPE ) sizeof( signed portCHAR ) );
 
-		/* Set UART reset . */
+		// Set UART reset .
 		UCA0CTL1 |= UCSWRST;
 
-		/* Set pin function. */
+		// Set pin function.
 		P3SEL |= serTX_AND_RX;
+		
+		// UCLISTEN sets loopback mode
+		UCA0STAT |= UCLISTEN;
+		
+		// Use SMCLK for USCI CLK
+		UCA0CTL1 |= UCSSEL_3;
 
-		/* All other bits remain at zero for n, 8, 1 interrupt driven operation.
-		LOOPBACK MODE!*/
-		UCA0STAT |= UC7BIT + UCLISTEN;
-		UCA0CTL1 |= UCSSEL1;
-
-		/* Setup baud rate low byte. */
+		// Setup baud rate low byte.
 		UCA0BR0 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
 
-		/* Setup baud rate high byte. */
+		// Setup baud rate high byte.
 		ulBaudRateCount >>= 8UL;
 		UCA0BR1 = ( unsigned portCHAR ) ( ulBaudRateCount & ( unsigned portLONG ) 0xff );
 
-		/* Enable ports. */
-		//ME2 |= UTXE1 + URXE1;
+		// All other bits remain at zero for N (no parity), 8 (data bits), 1 (stop bit) interrupt driven operation.
 
-		/* Clear UART reset. */
+		// Enable UART by clearing reset
 		UCA0CTL1 &= ~UCSWRST;
 
-		/* Nothing in the buffer yet. */
+		// Nothing in the buffer yet
 		sTHREEmpty = pdTRUE;
 
-		/* Enable interrupts. */
-		IE2 |= UCA0RXIE + UCA0TXIE;
+		// Enable USCI receive interrupt, transmit interrupt is only 
+		// enabled when there is something to send.
+		IE2 |= UCA0RXIE;
 	}
 	portEXIT_CRITICAL();
 	
@@ -198,6 +199,10 @@ signed portBASE_TYPE xReturn;
 			}
 		}
 	}
+	
+	//Enable the USCI transmit interrupt vector
+	IE2 |= UCA0TXIE;
+	
 	portEXIT_CRITICAL();
 
 	return pdPASS;
@@ -255,6 +260,8 @@ signed portBASE_TYPE xReturn;
 		{
 			/* There were no other characters to transmit. */
 			sTHREEmpty = pdTRUE;
+			//Disable USCI transmit interrupt
+			IE2 &= ~UCA0TXIE;
 		}
 
         /* Make sure any low power mode bits are clear before leaving the ISR. */
